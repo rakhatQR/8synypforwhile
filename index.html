@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Циклдік Операторлары</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f3f4f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Custom scrollbar for tables */
+        .table-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .table-container::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        .table-container::-webkit-scrollbar-thumb {
+            background: #888; 
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-10">
+
+    <!-- Main Container - 80% Width as requested -->
+    <div class="w-[80%] mx-auto bg-white shadow-2xl rounded-xl overflow-hidden">
+        
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 text-center relative">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Python: Циклдік Операторлар</h1>
+            <p class="text-blue-100 text-lg">Информатика пәні бойынша практикалық жұмыс</p>
+            <div class="mt-4 inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full border border-white/30">
+                <i class="fas fa-chalkboard-teacher mr-2"></i>
+                <span class="font-semibold">Пән мұғалімі: Еламанов Рахат</span>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <main class="p-6 md:p-10 space-y-12">
+
+            <!-- Task 1 -->
+            <section id="task1" class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                        <i class="fas fa-list-ol text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">1-тапсырма: For циклі (Жұп сандар)</h2>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    1-ден бастап N санына дейінгі (пайдаланушы енгізеді) барлық жұп сандарды экранға шығаратын бағдарлама.
+                </p>
+
+                <!-- Interactive JS Implementation Only -->
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm">
+                    <h3 class="font-semibold text-gray-700 mb-4 text-lg">Нәтижені тексеру:</h3>
+                    <div class="flex gap-4 mb-4">
+                        <input type="number" id="task1Input" placeholder="N санын енгіз" class="w-1/3 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg">
+                        <button onclick="solveTask1()" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium">
+                            Шығару
+                        </button>
+                    </div>
+                    <div class="text-sm text-gray-500 mb-2 font-medium">Нәтиже:</div>
+                    <div id="task1Result" class="p-4 bg-white border rounded-lg min-h-[60px] font-mono text-blue-800 break-words text-lg shadow-inner">
+                        (Мұнда нәтиже шығады)
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task 2 -->
+            <section id="task2" class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-purple-100 p-3 rounded-full text-purple-600">
+                        <i class="fas fa-sync text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">2-тапсырма: While циклі (Тақ сандар)</h2>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    N санынан M санына дейінгі сандар ішінен барлық тақ сандарды экранға шығарыңдар. N және M сандарын өзіңіз таңдайсыз.
+                </p>
+
+                <!-- Interactive JS Implementation Only -->
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm">
+                    <h3 class="font-semibold text-gray-700 mb-4 text-lg">Нәтижені тексеру:</h3>
+                    <div class="grid grid-cols-2 gap-4 mb-4 max-w-xl">
+                        <input type="number" id="task2InputN" placeholder="N (басы)" class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-lg">
+                        <input type="number" id="task2InputM" placeholder="M (соңы)" class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-lg">
+                    </div>
+                    <button onclick="solveTask2()" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition font-medium mb-4">
+                        Шығару
+                    </button>
+                    <div class="text-sm text-gray-500 mb-2 font-medium">Нәтиже:</div>
+                    <div id="task2Result" class="p-4 bg-white border rounded-lg min-h-[60px] font-mono text-purple-800 break-words text-lg shadow-inner">
+                        (Мұнда нәтиже шығады)
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task 3 -->
+            <section id="task3" class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-green-100 p-3 rounded-full text-green-600">
+                        <i class="fas fa-chart-line text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">3-тапсырма: Функция кестесі (For)</h2>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    Қадамы 0,5-ке тең болса, x үшін y = x² - 2x + 1 функциясының -3-тен 3-ке дейінгі ауқымдағы мәндер кестесін экранға шығару.
+                </p>
+
+                <!-- Interactive JS Implementation Only -->
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col">
+                    <h3 class="font-semibold text-gray-700 mb-2 text-lg">Нәтижені тексеру:</h3>
+                    <p class="text-base text-gray-500 mb-4 italic">Функция: y = x² - 2x + 1</p>
+                    
+                    <div class="mb-4">
+                         <button onclick="solveTask3()" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition font-medium">
+                            Кестені құру
+                        </button>
+                    </div>
+                    
+                    <div class="table-container overflow-y-auto max-h-[300px] border rounded-lg bg-white shadow-inner">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-green-50 text-green-800 sticky top-0">
+                                <tr>
+                                    <th class="p-3 border-b text-lg">x</th>
+                                    <th class="p-3 border-b text-lg">y</th>
+                                </tr>
+                            </thead>
+                            <tbody id="task3Result">
+                                <tr>
+                                    <td colspan="2" class="p-6 text-center text-gray-400">Кестені көру үшін батырманы басыңыз</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white p-6 text-center">
+            <p>&copy; 2024 Оқушының жұмысы. Барлық құқықтар қорғалған.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Task 1 Logic
+        function solveTask1() {
+            const n = parseInt(document.getElementById('task1Input').value);
+            const resultDiv = document.getElementById('task1Result');
+            
+            if (isNaN(n) || n < 1) {
+                resultDiv.innerHTML = '<span class="text-red-500">Қате: 1-ден үлкен бүтін сан енгізіңіз!</span>';
+                return;
+            }
+
+            let output = [];
+            for (let i = 1; i <= n; i++) {
+                if (i % 2 === 0) {
+                    output.push(i);
+                }
+            }
+
+            if (output.length === 0) {
+                resultDiv.innerText = "Бұл аралықта жұп сандар жоқ.";
+            } else {
+                resultDiv.innerText = output.join(', ');
+            }
+        }
+
+        // Task 2 Logic
+        function solveTask2() {
+            const n = parseInt(document.getElementById('task2InputN').value);
+            const m = parseInt(document.getElementById('task2InputM').value);
+            const resultDiv = document.getElementById('task2Result');
+
+            if (isNaN(n) || isNaN(m)) {
+                resultDiv.innerHTML = '<span class="text-red-500">Қате: Екі санды да енгізіңіз!</span>';
+                return;
+            }
+
+            if (n > m) {
+                 resultDiv.innerHTML = '<span class="text-red-500">Қате: N саны M санынан кіші болуы керек!</span>';
+                 return;
+            }
+
+            let output = [];
+            let i = n;
+            while (i <= m) {
+                if (i % 2 !== 0) {
+                    output.push(i);
+                }
+                i++;
+            }
+
+            if (output.length === 0) {
+                resultDiv.innerText = "Бұл аралықта тақ сандар жоқ.";
+            } else {
+                resultDiv.innerText = output.join(', ');
+            }
+        }
+
+        // Task 3 Logic
+        function solveTask3() {
+            const tbody = document.getElementById('task3Result');
+            tbody.innerHTML = ''; // Clear previous results
+
+            const start = -3;
+            const end = 3;
+            const step = 0.5;
+
+            // Using a loop similar to range but handling floats
+            for (let x = start; x <= end + 0.01; x += step) {
+                // Correct floating point math issues (e.g., -2.5000000005)
+                let cleanX = Math.round(x * 10) / 10;
+                
+                // Function: y = x^2 - 2x + 1
+                let y = Math.pow(cleanX, 2) - (2 * cleanX) + 1;
+                let cleanY = Math.round(y * 100) / 100;
+
+                const row = `
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="p-2 border-r font-mono">${cleanX}</td>
+                        <td class="p-2 font-mono font-bold text-green-700">${cleanY}</td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            }
+        }
+    </script>
+</body>
+</html>
